@@ -1,6 +1,3 @@
-//Código del cuadrado
-console.group("Cuadrado");
-//const ladoCuadrado = 5;
 
 function perimetroCuadrado(lado){
     return  lado*4;
@@ -8,34 +5,22 @@ function perimetroCuadrado(lado){
 function areaCuadrada(lado){
     return lado*lado;
 }
-//console.log(`los lados del cuadrado mide ${ladoCuadrado} cm`);
-//console.log(`el perimetro del cuadrado es ${perimetroCuadrado} cm`);
-//console.log(`el area cuadrada  es ${areaCuadrada} cm2`);
-
-console.groupEnd();
-
-//Codigo del triangulo
-
-console.group("Triangulos");
-//const ladoTriangulo1 = 6;
-//const ladoTriangulo2 = 6;
-//const baseTriangulo = 4;
-//const alturaTriangulo =5.5;
-
 function perimetroTriangulo(lado1,lado2,base) {
     return lado1 + lado2 + base;
 }
 function areaTriangulo(base,altura){ 
     return (base*altura)/2;
 }
-//console.log(`los lados del triangulo miden ${ladoTriangulo1}cm, ${ladoTriangulo2}cm ,la base mide ${baseTriangulo} cm y la altura del triangulo es de ${alturaTriangulo}`);
-//console.log(`El perimetro del triangulo es: ${perimetroTriangulo}`);
-//console.log(`el area del traingulo es ${areaTriangulo}`)
-console.groupEnd();
-
-//Codigo del triangulo
-console.group("Circulo");
-//const radioCirculo =4;
+function alturaTriangulo(lado1,lado2,base){
+    if(lado1==lado2){
+        const ladosAlCuadrado = lado1 * lado2;
+        const baseAlCuadrado = (base*base)/4
+        const raiz = Math.sqrt(ladosAlCuadrado-baseAlCuadrado);
+        return `La Altura del triangulo es ${raiz}`;
+    }else{
+        return "No es un triangulo Isosceles :(";
+    }
+}
 function diametroCirculo(radio){
     return  radio*2;
 }
@@ -46,7 +31,39 @@ function perimetroCirculo(diametro){
 function areaCirculo(radio){ 
     return (radio*radio)*PI;
 }
-
-//console.log(`El radio del circulo es: ${radioCirculo}, el diametro es ${diametroCirculo}, el perimetro es ${perimetroCirculo} y el área es ${areaCirculo}` );
-
-console.groupEnd();
+function calPerimetro(){
+    const input = document.getElementById("inputCuadrado");
+    const value = input.value;
+    const perimetro = perimetroCuadrado(value);
+    alert(perimetro);
+}
+function calArea(){
+    const input = document.getElementById("inputCuadrado");
+    const value = input.value;
+    const perimetro = areaCuadrada(value);
+    alert(perimetro);
+}
+function calPerimetroT(data){
+    const lado1 = document.getElementById("lado1");
+    const lado2 = document.getElementById("lado2");
+    const base = document.getElementById("base");
+    const value1 = Number(lado1.value);
+    const value2 = Number(lado2.value);
+    const valueb = Number(base.value);
+    if(data==0){
+        const perimetro = perimetroTriangulo(value1,value2,valueb);
+        alert(perimetro);
+    }else{
+        const alturaTrianguloT = alturaTriangulo(value1,value2,valueb);
+        alert(alturaTrianguloT);
+    }
+    
+}
+function calAreaT(){
+    const base = document.getElementById("base");
+    const altura = document.getElementById("altura");
+    const valueb = base.value;
+    const alturab = altura.value;
+    const perimetro = areaTriangulo(valueb,alturab);
+    alert(perimetro);
+}

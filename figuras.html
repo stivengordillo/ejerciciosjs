@@ -5,9 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-    
+    <header>
+        <h1>Calcular figuras geométricas</h1>     
+    </header>
+    <section>
+        <p>Calcular Área y perimetro de un cuadrado</p>
+        <form action="">
+            <input id="inputCuadrado" type="number" placeholder="Cuanto mide cada lado del cuadrado">
+            <button type="button" onclick="calPerimetro()">Calcular perimetro</button>
+            <button type="button" onclick="calArea()">Calcular Área</button>
+        </form>
+    </section>
+    <section>
+        <p>Calcular Área y perimetro de un triangulo</p>
+        <form action="">
+            <input id="lado1" type="number" placeholder="Lado 1">
+            <input id="lado2" type="number" placeholder="Lado 2">
+            <input id="base" type="number" placeholder="Base">
+            <input id="altura" type="number" placeholder="Altura">
+            <button type="button" onclick="calPerimetroT(0)">Calcular perimetro</button>
+            <button type="button" onclick="calAreaT()">Calcular Área</button>
+            <button type="button" onclick="calPerimetroT(1);">Calcular Altura del triangulo</button>
+        </form>
+    </section>
     <script src="./js/figuras.js"></script>
 </body>
 </html>

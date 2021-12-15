@@ -1,0 +1,35 @@
+*{
+    box-sizing:border-box;
+}
+body{
+    margin: 0;
+    padding:0;
+}
+
+h1{
+    font-size:1.2rem;
+    text-align: center;
+    color:white;
+    background: blueviolet;
+    margin: 0px;
+    padding:10px 0;
+}
+section{
+    margin:10px auto;
+    width: 80vw;
+}
+input{
+    display:block;
+    padding:.3rem;
+    width:100%;
+    border-radius:10px;
+    margin:5px 0;
+    border:1px solid gray;
+}
+p{
+    text-align: center;;
+}
+button{
+    width:100%;
+    margin:5px 0;
+}
