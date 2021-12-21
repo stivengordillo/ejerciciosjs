@@ -22,6 +22,7 @@ Promise.all([algoVaApasar(), pierde()])
     .then(response=> {console.log(response)})
     .catch(err => console.log(err));
 
+
 //algoVaApasar()
     //.then(response => console.log(response))
     //.catch(err => console.error(err));
